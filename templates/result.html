@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% if content %}
+    <title>{{ content }} - How Search</title>
+    {% else %}
+    <title>How Search</title>
+    {% endif %}
+
+    <style>
+        em strong {
+            font-style: normal;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    {% for i in range(0, length) %}
+    <li>
+        <a href="{{ hrefs[i] }}" target="_blank">
+            {{ titles[i]|safe }}
+        </a>
+    </li>
+    {% endfor %}
+    
+</body>
+</html>
