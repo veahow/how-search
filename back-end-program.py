@@ -76,16 +76,13 @@ def search():
     if request.method == 'GET':
         content = request.args.get('content')
         page = request.args.get('page')
+        engine = request.args.get('engine')
 
-        html = get_html(content, page)
+        html = get_html(content, page, engine)
 
-        return get_result(html, content)
+        return get_result(html, content, engine)
     else:
         return '失败 Failed'
-
-@app.route('/projects/')
-def projects():
-    return 'The project page'
 
 if __name__ == '__main__':
     app.run(debug=True, port=8000)
